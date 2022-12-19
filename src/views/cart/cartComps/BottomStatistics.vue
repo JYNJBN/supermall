@@ -49,6 +49,7 @@ export default {
   },
   methods: {
     onIsAllSelect() {
+      console.log();
       this.cartList.forEach((item) => (item.checkFlag = !item.checkFlag));
     },
   },
