@@ -1,6 +1,6 @@
 <template>
   <div class="NavBar">
-    <div class="left"><slot name="‘left’"></slot></div>
+    <div class="left"><slot name="left"></slot></div>
     <div class="center"><slot name="center"></slot></div>
     <div class="right"><slot name="right"></slot></div>
   </div>
@@ -15,10 +15,10 @@ export default {
 </script>
 <style lang="less" scoped>
 .NavBar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  //position: fixed;
+  //top: 0;
+  //left: 0;
+  //right: 0;
   display: flex;
   line-height: 44px;
   height: 44px;

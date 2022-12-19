@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <router-view></router-view>
-    <main-tab-bar></main-tab-bar>
+    <keep-alive include="Home"> <router-view></router-view> </keep-alive>
+    <main-tab-bar class="main-tab-bar" id="main-tab-bar"></main-tab-bar>
   </div>
 </template>
 
@@ -18,4 +18,14 @@ export default {
 
 <style lang="less">
 @import '@/assets/css/base.css';
+#app {
+  height: 100vh -54px;
+}
+#main-tab-bar {
+  color: black;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  box-shadow: none;
+}
 </style>

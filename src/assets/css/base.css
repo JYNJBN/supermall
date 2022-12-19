@@ -3,7 +3,7 @@
 /* :root -> 获取根元素html */
 :root {
     /*定义变量*/
-    --color-text: #666;
+    --color-text: #c7c6c6;
     --color-high-text: #ff5777;
     --color-tint: #ff8198;
     --color-background: #fff;

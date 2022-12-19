@@ -26,7 +26,10 @@ export default {
   },
   methods: {
     setIndex(index) {
+      //改变当前Index去将对应项变成活跃Active
       this.currentIndex = index;
+      //发起一个自定义事件将index值给Home组件
+      this.$emit('getIndex', index);
     },
   },
 };
@@ -35,10 +38,11 @@ export default {
 <style scoped lang="less">
 .tabControl {
   display: flex;
-  margin-top: 10px;
-  position: sticky;
-  top: 54px;
+  top: 44px;
+  height: 30px;
+  line-height: 30px;
   z-index: 1;
+  background-color: white;
   .tabItem {
     flex: 1;
     text-align: center;

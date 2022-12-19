@@ -9,7 +9,7 @@ export function getHomeMultidata() {
 //page是页数
 export function getHomeGoods(type, page) {
   return request({
-    url: 'home/data',
+    url: '/home/data',
     params: {
       type,
       page,
