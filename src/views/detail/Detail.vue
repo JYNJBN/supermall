@@ -19,6 +19,7 @@
     </scroll>
     <detail-bottom-nav @addCart="addCart"></detail-bottom-nav>
     <back-top v-show="showBackTop" @click.native="backTop"></back-top>
+    <!--    <toast :msg="toastMsg" :toastShow="toastShow"></toast>-->
   </div>
 </template>
 
@@ -35,9 +36,9 @@ import scroll from 'components/common/scroll/Scroll';
 import DetailBottomNav from 'views/detail/detailComps/DetailBottomNav';
 
 import { getGoodDetail, getRecommendDate, GoodsInfo, GoodsParam, ShopInfo } from 'network/detail';
-import { imgLoadMixin, backTopMixin } from '@/common/projectMixin';
-import detailGoodsInfo from 'views/detail/detailComps/DetailGoodsInfo';
+import { backTopMixin } from '@/common/projectMixin';
 import { debounce } from '@/common/debounce';
+import Toast from 'components/common/toast/Toast';
 
 export default {
   name: 'Detail',
@@ -54,6 +55,8 @@ export default {
       imgLoadCallBack: null,
       saveTypeY: [],
       scrollCurrentIndex: 0,
+      // toastMsg: '',
+      // toastShow: false,
     };
   },
   components: {
@@ -66,6 +69,7 @@ export default {
     DetailCommentInfo,
     GoodsList,
     DetailBottomNav,
+    // Toast,
     scroll,
   },
   created() {
@@ -152,7 +156,7 @@ export default {
         }
       }
     },
-    addCart() {
+    async addCart() {
       console.log('addCart');
       const cartObj = {};
       cartObj.image = this.topImages[0];
@@ -162,7 +166,13 @@ export default {
       cartObj.iid = this.id;
       //购物车勾选状态
       cartObj.checkFlag = true;
-      this.$store.dispatch('addCart', cartObj);
+      // this.toastMsg = await this.$store.dispatch('addCart', cartObj);
+      // this.toastShow = true;
+      // setTimeout(() => {
+      //   this.toastShow = false;
+      // }, 1000);
+      const res = await this.$store.dispatch('addCart', cartObj);
+      this.$toast.show(res, 1000);
     },
   },
 };

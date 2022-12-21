@@ -40,7 +40,7 @@ export default {
   height: calc(100vh - 45px);
 }
 .wrapper {
-  height: calc(100vh - 45px - 49px - 30px);
+  height: calc(100vh - 45px - 49px - 30px - 20px);
 }
 .nav-bar {
   position: relative;

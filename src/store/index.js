@@ -7,14 +7,16 @@ const state = {
   cartList: [],
 };
 const actions = {
-  addCart(context, payload) {
+  async addCart(context, payload) {
     let oldProduct = null;
     oldProduct = state.cartList.find((item) => item.iid === payload.iid);
     // 如果有重复的产品让它的数量加一
     if (oldProduct) {
       context.commit('addCartCount', oldProduct);
+      return '商品数量加一';
     } else {
       context.commit('addProduct', payload);
+      return '添加到购物车';
     }
   },
 };
