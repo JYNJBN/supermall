@@ -136,13 +136,10 @@ export default {
       this.getHomeGoods(this.GoodsType);
     });
     this.$bus.$on('homeSwiperImgLoad', () => {
-      // console.log(this.$refs.tab_control2);
       this.tabControlOffsetTop = this.$refs.tab_control2.$el.offsetTop - 44;
-      // console.log(this.tabControlOffsetTop);
     });
   },
   activated() {
-    // console.log('激活');
     this.$refs.scroll.scrollTo(0, this.saveY, 400);
     this.$refs.scroll.refresh();
   },

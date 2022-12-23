@@ -93,7 +93,6 @@ export default {
   },
 
   beforeRouteUpdate(to, from, next) {
-    // 做一些想要做的处理...
     this.id = to.query.id;
     this.getGoodDetail();
     // this.errCode = to.params.code
@@ -123,8 +122,6 @@ export default {
     },
     getRecommendDate() {
       getRecommendDate().then((res) => {
-        // console.log(11);
-        // console.log(res);
         this.recommendList = res.data.list;
       });
     },
