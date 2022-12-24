@@ -142,7 +142,6 @@ export default {
 <style scoped>
 .wrapper {
   /* background: chartreuse; */
-  height: 100vh;
 }
 .nav-bar {
   background: var(--color-tint);
@@ -151,19 +150,14 @@ export default {
 }
 .content {
   overflow: hidden;
-  position: absolute;
-  height: calc(100vh - 49px);
-  left: 0;
-  right: 0;
-  top: 44px;
-  bottom: 49px;
+  height: calc(100vh - 49px - 40px);
   display: flex;
 }
 .menu {
-  height: calc(100vh - 44px);
+  height: calc(100vh - 44px - 40px);
 }
 .tab-content {
-  height: calc(100vh - 44px);
+  height: calc(100vh - 44px - 49px);
   flex: 1;
   position: absolute;
   left: 100px;

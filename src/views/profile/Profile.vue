@@ -29,6 +29,6 @@ export default {
   font-weight: bold;
 }
 .list {
-  height: calc(100vh - 49px);
+  height: calc(100vh - 49px - 130px);
 }
 </style>
